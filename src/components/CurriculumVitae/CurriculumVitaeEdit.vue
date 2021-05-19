@@ -34,14 +34,14 @@
     <br><br>
     <b style="font-size: 20px">Educations</b>
     <div v-for="education in CV.educations" :key="education">
-      <b>School: </b>{{ education.school }}
-      <text v-if="education.faculty"><b>Faculty: </b>{{ education.faculty }}</text>
-      <text v-if="education.fieldOfStudy"><b>Field of Study: </b>{{ education.fieldOfStudy }}</text>
-      <text v-if="education.degree"><b>Degree: </b>{{ education.degree }}</text>
-      <b>Status: </b> {{ education.status }}
+      <b>School: </b>{{ education.school }}<br>
+      <text v-if="education.faculty"><b>Faculty: </b>{{ education.faculty }} <br></text>
+      <text v-if="education.fieldOfStudy"><b>Field of Study: </b>{{ education.fieldOfStudy }} <br></text>
+      <text v-if="education.degree"><b>Degree: </b>{{ education.degree }} <br></text>
+      <b>Status: </b> {{ education.status }}<br>
       <b>Started at: </b>{{ education.started_at }}
-      <text v-if="education.finished_at"><b>Finished at: </b>{{ education.finished_at }}</text>
-      <router-link :to="{path: `/editEducation/${education.id}/`}">
+      <text v-if="education.finished_at"><b>Finished at: </b>{{ education.finished_at }} </text>
+      <router-link :to="{path: `/editEducation/${education.id}/`}"><br>
         <button id="editEducation">Edit</button>
       </router-link>
       <button :disabled="removing" @click="removeEducation(education.id)">Remove</button>
