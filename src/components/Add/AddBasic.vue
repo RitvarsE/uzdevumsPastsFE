@@ -41,7 +41,7 @@ export default {
   methods:{
     addBasic() {
       this.basics.push(this.basic)
-      this.$http.post('http://localhost:8000/api/addBasic/'+this.cvIndex, {
+      this.$http.post(this.$url + 'addBasic/'+this.cvIndex, {
         basics: this.basics
       })
           .then(() => {

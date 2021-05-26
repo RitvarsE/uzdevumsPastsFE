@@ -37,14 +37,14 @@ export default {
       if (!this.$route.params.id) {
         return
       }
-      this.$http.get(`http://localhost:8000/api/getOther/${this.$route.params.id}`).then((response) => {
+      this.$http.get(this.$url + `getOther/${this.$route.params.id}`).then((response) => {
         this.other = response.data
         console.log(response.data)
       })
     },
     editOther() {
       this.others.push(this.other)
-      this.$http.post('http://localhost:8000/api/updateOther/' + this.$route.params.id, {
+      this.$http.post(this.$url + 'updateOther/' + this.$route.params.id, {
         others: this.others
       }).then(() => {
         this.$router.go(-1)

@@ -3,8 +3,10 @@
     <div class="contact-form">
       <form @submit.prevent="addOther">
         <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
-          <input class="form" v-model="other.title" name="title" id="other_title" type="text" placeholder="Title" required>
-          <input class="form" v-model="other.description" name="description" id="other_description" type="text" placeholder="description" required>
+          <input class="form" v-model="other.title" name="title" id="other_title" type="text" placeholder="Title"
+                 required>
+          <input class="form" v-model="other.description" name="description" id="other_description" type="text"
+                 placeholder="description" required>
           <button>Add</button>
         </div>
       </form>
@@ -20,8 +22,8 @@ export default {
     const toast = useToast();
     return {toast}
   },
-  data(){
-    return{
+  data() {
+    return {
       cvIndex: '',
       other: {
         title: '',
@@ -33,10 +35,10 @@ export default {
   created() {
     this.cvIndex = this.$route.params.cvIndex;
   },
-  methods:{
+  methods: {
     addOther() {
       this.others.push(this.other)
-      this.$http.post('http://localhost:8000/api/addOther/'+this.cvIndex, {
+      this.$http.post(this.$url + 'addOther/' + this.cvIndex, {
         others: this.others
       })
           .then(() => {

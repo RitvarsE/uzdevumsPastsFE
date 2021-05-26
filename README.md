@@ -1,24 +1,9 @@
-# pasts-fe
+## Installation
+1. Run **npm install**
+2. Change your backend url in **src/main.js**
+3. Run **npm run serve** command
 
-## Project setup
-```
-npm install
-```
+Before step 3. you should run backend server.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Download and instructions here:
+https://github.com/RitvarsE/uzdevumsPastsBE

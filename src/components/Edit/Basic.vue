@@ -42,14 +42,14 @@ export default {
       if (!this.$route.params.id) {
         return
       }
-      this.$http.get(`http://localhost:8000/api/getBasic/${this.$route.params.id}`).then((response) => {
+      this.$http.get(this.$url + `getBasic/${this.$route.params.id}`).then((response) => {
         this.basic = response.data
         console.log(response.data)
       })
     },
     updateBasic() {
       this.basics.push(this.basic)
-      this.$http.post('http://localhost:8000/api/updateBasic/' + this.$route.params.id, {
+      this.$http.post(this.$url + 'updateBasic/' + this.$route.params.id, {
         basics: this.basics
       }).then(() => {
         this.$router.go(-1)

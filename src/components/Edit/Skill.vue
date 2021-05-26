@@ -35,14 +35,14 @@ export default {
       if (!this.$route.params.id) {
         return
       }
-      this.$http.get(`http://localhost:8000/api/getSkill/${this.$route.params.id}`).then((response) => {
+      this.$http.get(this.$url + `getSkill/${this.$route.params.id}`).then((response) => {
         this.skill = response.data
         console.log(response.data)
       })
     },
     editSkill() {
       this.skills.push(this.skill)
-      this.$http.post('http://localhost:8000/api/updateSkill/' + this.$route.params.id, {
+      this.$http.post(this.$url + 'updateSkill/' + this.$route.params.id, {
         skills: this.skills
       }).then(() => {
         this.$router.go(-1)

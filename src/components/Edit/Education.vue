@@ -53,13 +53,13 @@ export default {
       if (!this.$route.params.id) {
         return
       }
-      this.$http.get(`http://localhost:8000/api/getEducation/${this.$route.params.id}`).then((response) => {
+      this.$http.get(this.$url + `getEducation/${this.$route.params.id}`).then((response) => {
         this.education = response.data
       })
     },
     editEducation() {
       this.educations.push(this.education)
-      this.$http.post('http://localhost:8000/api/updateEducation/' + this.$route.params.id, {
+      this.$http.post(this.$url + 'updateEducation/' + this.$route.params.id, {
         educations: this.educations
       }).then(() => {
         this.$router.go(-1)

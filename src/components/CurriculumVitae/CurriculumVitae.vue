@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     addCV() {
-      this.$http.put('http://localhost:8000/api/addCV/', {
+      this.$http.put(this.$url + 'addCV/', {
         title: this.title
       }).then((response) => {
         this.$router.push('/edit/' + response.data.id)

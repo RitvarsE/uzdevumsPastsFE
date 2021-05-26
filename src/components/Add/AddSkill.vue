@@ -34,7 +34,7 @@ export default {
   methods:{
     addSkill() {
       this.skills.push(this.skill)
-      this.$http.post('http://localhost:8000/api/addSkill/'+this.cvIndex, {
+      this.$http.post(this.$url + 'addSkill/'+this.cvIndex, {
         skills: this.skills
       })
           .then(() => {

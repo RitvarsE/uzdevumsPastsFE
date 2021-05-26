@@ -106,7 +106,7 @@ export default {
       if (!this.$route.params.id) {
         return
       }
-      this.$http.get(`http://localhost:8000/api/get/${this.$route.params.id}`).then((response) => {
+      this.$http.get(this.$url + `get/${this.$route.params.id}`).then((response) => {
         this.CV = response.data
         this.basics = response.data.basics[0]
       })

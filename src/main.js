@@ -12,3 +12,5 @@ const options = {
 const app = createApp(App)
 app.config.globalProperties.$http = axios
 app.use(router).use(Toast, options).mount('#app')
+
+app.config.globalProperties.$url = 'http://localhost:8000/api/'

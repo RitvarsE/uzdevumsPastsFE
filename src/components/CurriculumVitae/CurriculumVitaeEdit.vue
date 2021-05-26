@@ -101,14 +101,14 @@ export default {
       if (!this.$route.params.id) {
         return
       }
-      this.$http.get(`http://localhost:8000/api/get/${this.$route.params.id}`).then((response) => {
+      this.$http.get(this.$url + `get/${this.$route.params.id}`).then((response) => {
         this.CV = response.data
         this.basicsLength = response.data.basics.length
       })
     },
     removeJob(jobId) {
       this.removing = true
-      this.$http.delete('http://localhost:8000/api/deleteJob/' + jobId)
+      this.$http.delete(this.$url + 'deleteJob/' + jobId)
           .then(() => {
             this.getData()
             this.removing = false
@@ -121,7 +121,7 @@ export default {
     },
     removeSkill(skillId) {
       this.removing = true
-      this.$http.delete('http://localhost:8000/api/deleteSkill/' + skillId)
+      this.$http.delete(this.$url + 'deleteSkill/' + skillId)
           .then(() => {
             this.getData()
             this.removing = false
@@ -134,7 +134,7 @@ export default {
     },
     removeOther(otherId) {
       this.removing = true
-      this.$http.delete('http://localhost:8000/api/deleteOther/' + otherId)
+      this.$http.delete(this.$url + 'deleteOther/' + otherId)
           .then(() => {
             this.getData()
             this.removing = false
@@ -147,7 +147,7 @@ export default {
     },
     removeEducation(educationId) {
       this.removing = true
-      this.$http.delete('http://localhost:8000/api/deleteEducation/' + educationId)
+      this.$http.delete(this.$url + 'deleteEducation/' + educationId)
           .then(() => {
             this.getData()
             this.removing = false

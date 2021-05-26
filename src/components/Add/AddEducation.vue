@@ -53,7 +53,7 @@ export default {
   methods:{
     addEducation() {
       this.educations.push(this.education)
-      this.$http.post('http://localhost:8000/api/addEducation/'+this.cvIndex, {
+      this.$http.post(this.$url+'addEducation/'+this.cvIndex, {
         educations: this.educations
       })
           .then(() => {

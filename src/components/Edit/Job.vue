@@ -49,13 +49,13 @@ export default {
       if (!this.$route.params.id) {
         return
       }
-      this.$http.get(`http://localhost:8000/api/getJob/${this.$route.params.id}`).then((response) => {
+      this.$http.get(this.$url + `getJob/${this.$route.params.id}`).then((response) => {
         this.job = response.data
       })
     },
     updateJob() {
       this.jobs.push(this.job)
-      this.$http.post('http://localhost:8000/api/updateJob/' + this.$route.params.id, {
+      this.$http.post(this.$url + 'updateJob/' + this.$route.params.id, {
         jobs: this.jobs
       }).then(() => {
         this.$router.go(-1)
