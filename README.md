@@ -3,7 +3,7 @@
 2. Change your backend url in **src/main.js**
 3. Run **npm run serve** command
 
-Before step 3. you should run backend server.
+After Step 3, you should run backend server.
 
 Download and instructions here:
 https://github.com/RitvarsE/uzdevumsPastsBE
